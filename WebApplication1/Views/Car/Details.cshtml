@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <article>
+        <header>
+            <h2>
+                @Model.Title
+            </h2>
+        </header>
+        <p>
+            @Model.Content
+        </p>
+        <small class="author">
+            --author @Model.Author.FullName
+        </small>
+        <footer class="pull-right">
+            @Html.ActionLink("Edit", "Edit", "Car", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
+            @Html.ActionLink("Delete", "Delete", "Car", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+            @Html.ActionLink("Back", "Index", "Car", null, new { @class = "btn btn-default btn-xs" })
+        </footer>
+    </article>
+</div>
+<hr/>
+
+<h2>Details</h2>
+
